@@ -20,11 +20,11 @@ function main() {
 
       const buttonArchived = document.createElement("button");
       buttonArchived.setAttribute("type", "button");
-      buttonArchived.innerText = 'Archive';
+      buttonArchived.innerText = "Archive";
 
       const buttonTrash = document.createElement("button");
       buttonTrash.classList.add("button-delete");
-      buttonTrash.innerText = 'Delete';
+      buttonTrash.innerText = "Delete";
 
       buttonTrash.setAttribute("type", "button");
       buttonTrash.addEventListener("click", function () {
@@ -36,7 +36,7 @@ function main() {
 
       if (note.archived) {
         buttonArchived.classList.add("button-unarchived");
-        buttonArchived.innerText = 'Unarchived';
+        buttonArchived.innerText = "Unarchived";
         buttonArchived.addEventListener("click", function () {
           unArchiveNote(note.id);
         });
@@ -174,7 +174,7 @@ function main() {
   };
 
   const showResponseMessage = (message) => {
-    alert(message)
+    alert(message);
   };
 
   document.addEventListener("DOMContentLoaded", () => {

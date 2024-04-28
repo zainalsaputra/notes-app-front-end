@@ -8,10 +8,8 @@ class NoteForm extends HTMLElement {
     this._shadowRoot = this.attachShadow({ mode: "open" });
     this._style = document.createElement("style");
 
-    this.customValidationTitleHandler =
-      this.customValidationTitleHandler.bind(this);
-    this.customValidationBodyHandler =
-      this.customValidationBodyHandler.bind(this);
+    this.customValidationTitleHandler = this.customValidationTitleHandler.bind(this);
+    this.customValidationBodyHandler = this.customValidationBodyHandler.bind(this);
   }
 
   _updateStyle() {
@@ -107,9 +105,7 @@ class NoteForm extends HTMLElement {
         </form>
       `;
 
-    this._shadowRoot
-      .querySelector("#noteForm")
-      .addEventListener("submit", this.onSubmit.bind(this));
+    this._shadowRoot.querySelector("#noteForm").addEventListener("submit", this.onSubmit.bind(this));
   }
 
   onSubmit(event) {
@@ -138,8 +134,7 @@ class NoteForm extends HTMLElement {
 
   customValidationTitleHandler(event) {
     const titleInput = event.target;
-    const titleValidationMessage =
-      this._shadowRoot.querySelector("#titleValidation");
+    const titleValidationMessage = this._shadowRoot.querySelector("#titleValidation");
 
     if (!titleInput.value.trim()) {
       titleValidationMessage.innerText = "Title is required.";
@@ -150,8 +145,7 @@ class NoteForm extends HTMLElement {
 
   customValidationBodyHandler(event) {
     const bodyInput = event.target;
-    const bodyValidationMessage =
-      this._shadowRoot.querySelector("#bodyValidation");
+    const bodyValidationMessage = this._shadowRoot.querySelector("#bodyValidation");
 
     if (!bodyInput.value.trim()) {
       bodyValidationMessage.innerText = "Body is required.";
